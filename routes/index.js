@@ -8,11 +8,7 @@ router.get('/', function(req, res) {
 
 //get threejstest
 router.get('/threejstest', function(req, res) {
-  res.render('threejstest/index');
-});
-
-router.get('/threejstest/firstcube', function(req, res) {
-  res.render('threejstest/firstcube');
+  res.render('threejstest');
 });
 
 
