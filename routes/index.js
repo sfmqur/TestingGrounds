@@ -6,7 +6,7 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Testing Grounds' });
 });
 
-//threejstest
+//get threejstest
 router.get('/threejstest', function(req, res) {
   res.render('threejstest/index');
 });
