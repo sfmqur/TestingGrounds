@@ -6,9 +6,13 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Testing Grounds' });
 });
 
-//get threejstest
-router.get('/threejstest', function(req, res) {
-  res.render('threejstest');
+//get threejs
+router.get('/threejs', function(req, res) {
+  res.render('threejs/threejs');
+});
+
+router.get('/threejs/firstcube', function(req, res) {
+  res.render('threejs/firstcube');
 });
 
 //get natural simulation
