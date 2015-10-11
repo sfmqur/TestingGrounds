@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Random Walker</title>
+    </head>
+    <body>
+        <canvas id="walker" width="500" height="500">
+            <script>
+                var canvas = document.getElementById("walker");
+                var ctx = canvas.getContext("2d");
+
+                var Walker = function(){
+                    this.x = width/2;
+                    this.y = height/2;
+                }
+                Walker.prototype.display = function(){
+                }
+
+                ctx.moveTo(200,200);
+                ctx.lineTo(300,300);
+            </script>
+        </canvas>
+    </body>
+</html>
