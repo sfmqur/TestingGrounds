@@ -28,6 +28,10 @@ router.get('/natsim/normdist', function(req, res) {
   res.render('natsim/normdist');
 });
 
+router.get('/natsim/montecarlo', function(req, res) {
+  res.render('natsim/montecarlo');
+});
+
 //get crap
 router.get('/crap', function(req, res) {
   res.render('crap');
