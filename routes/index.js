@@ -24,6 +24,10 @@ router.get('/natsim/walker', function(req, res) {
   res.render('natsim/walker');
 });
 
+router.get('/natsim/normdist', function(req, res) {
+  res.render('natsim/normdist');
+});
+
 //get crap
 router.get('/crap', function(req, res) {
   res.render('crap');
