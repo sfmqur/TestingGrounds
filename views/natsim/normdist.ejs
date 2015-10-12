@@ -5,6 +5,8 @@
         <link rel="stylesheet" href="/stylesheets/style.css"/>
     </head>
     <body>
+        <p> Shows psuedo random quality of Math.random due to the down ward trend of all the lines should
+         be zig zagind up and down trending right in a perfect random Math.random function.</p>
         <canvas id="normdist" width="900" height="600">
             <script>
                 var canvas = document.getElementById("normdist");
@@ -12,9 +14,9 @@
                 ctx.fillStyle = "#ff0000"
                 var deviation = 0.10;
 
-                Walker = new function(){
-                    this.x = 900/2;
-                    this.y = 600/2;
+                Walker = function(){
+                    this.x = parseInt(Math.random() * 1800 % 900);
+                    this.y = parseInt(Math.random() * 1200 % 600);
                 }
                 Walker.prototype.walk = function(){
                     var number = Math.random();
@@ -30,15 +32,27 @@
                     }else{
                         this.x--;
                     }
+                    if(this.x >= 900){
+                        this.x -= 900;
+                    }
+                    if(this.x < 0){
+                        this.x += 900;
+                    }
+                    if(this.y >= 600){
+                        this.y -= 600;
+                    }
+                    if(this.y < 0){
+                        this.y += 600;
+                    }
                 }
 
-                Walker.prototype.display(){
-                    ctx.fillRect(this,x,this.y,1,1);
+                Walker.prototype.display = function(){
+                    ctx.fillRect(this.x,this.y,1,1);
                 }
 
                 var w = new Walker();
 
-                for(var x = 0; x < 1000; x++){
+                for(var x = 0; x < 10000; x++){
                     w.walk();
                     w.display();
                 }
