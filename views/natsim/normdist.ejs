@@ -10,12 +10,38 @@
                 var canvas = document.getElementById("normdist");
                 var ctx = canvas.getContext("2d");
                 ctx.fillStyle = "#ff0000"
+                var deviation = 0.10;
 
                 Walker = new function(){
                     this.x = 900/2;
                     this.y = 600/2;
                 }
+                Walker.prototype.walk = function(){
+                    var number = Math.random();
+                    var choice = 0;
+                    if (number >=0  && number >= .68){
+                        this.x++;
+                    }
+                    else if(number < .68 && number <=.815){
+                        this.y++;
+                    }
+                    else if(number < .815 && number <= .95){
+                        this.y--;
+                    }else{
+                        this.x--;
+                    }
+                }
 
+                Walker.prototype.display(){
+                    ctx.fillRect(this,x,this.y,1,1);
+                }
+
+                var w = new Walker();
+
+                for(var x = 0; x < 1000; x++){
+                    w.walk();
+                    w.display();
+                }
             </script>
         </canvas>
     </body>
