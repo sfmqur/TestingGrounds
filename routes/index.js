@@ -44,4 +44,8 @@ router.get('/fractal', function(req, res) {
 	res.render('fractal/index');
 });
 
+//get data s and algorithms
+router.get('/dataStructure', function(req, res) {
+	res.render('dataStructure/index');
+});
 module.exports = router;
